@@ -1,0 +1,18 @@
+Explanation:
+
+Initialization: We start by initializing an empty unordered map called numToIndex, which will be used to store numbers from the input array nums as keys and their corresponding indices as values. We also initialize an empty vector ans to store the answer.
+
+Main Loop: We iterate through the nums array using a for loop. For each element nums[i], we calculate its complement by subtracting it from the target value. The complement is the value that, when added to nums[i], should equal the target.
+
+Checking for Complement: We check if the complement exists in the numToIndex map by using the find method. If the complement is found, it means we have found a pair of numbers whose sum equals the target. In this case, we add the indices of the complement and the current element to the ans vector and return it as the answer.
+
+Storing Numbers in the Map: If the complement is not found in the map, we store the current number nums[i] and its index i in the numToIndex map using the emplace function. This allows us to keep track of the numbers we've seen so far.
+
+Handling No Solution: If no solution is found after iterating through the entire nums array, we return an empty vector as the answer, indicating that there are no pairs of numbers in the array that add up to the target.
+
+Time Complexity Analysis:
+The time complexity of this optimized solution is O(n) because we iterate through the nums array once, and each operation inside the loop (finding the complement and inserting elements into the map) has an average time complexity of O(1) for the unordered map, resulting in a linear time complexity overall.
+
+
+
+
